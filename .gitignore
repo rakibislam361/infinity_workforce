@@ -4,7 +4,7 @@
 /public/images/certificate
 /public/images/cv
 /public/images/employer
-/public/images/user/*
+/public/images/user/*.
 /public/images/user-documents
 /storage/*.key
 /vendor
