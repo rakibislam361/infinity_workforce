@@ -1,0 +1,35 @@
+<form action="{{url('admin/user/status/')}}/{{$user->id}}" method="post" class="status">
+											@csrf
+											<label class="switch switch-green status">
+										      <input type="checkbox" class="switch-input" {{@$user->status==1 ? 'checked' : '' }} value="1" name="status">
+										      <span class="switch-label" data-on="On" data-off="Off"></span>
+										      <span class="switch-handle"></span>
+										    </label>
+
+
+							</form>
+public function status(Request $request,$id){
+        $user=User::find($id);
+        if(isset($request->status)){
+            $user->status=1;
+            $user->save();
+            return redirect()->back()->with('success','Successfully Active User!');
+        }
+        else{
+             $user->status=0;
+             $user->save();
+             return redirect()->back()->with('success','Successfully Deactive User!');
+        }
+  
+
+    }
+
+<script>
+jQuery(function ($){
+// status 
+		    $('.status').on('click',function(){
+		            $form = $(this);
+		           $form.submit();
+		        });
+		});
+</script>

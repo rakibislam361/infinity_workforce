@@ -1,0 +1,58 @@
+<select class="form-control" name="travel">
+	                            			<option value="1">Car</option>
+	                            			<option value="2">public transport</option>
+	                            			<option value="3">scooter/bike</option>
+	                            		</select>
+_______________________________________________________________________________________________________
+<div class="col-md-6 col-lg-6">
+	                            		<label class="control-label mb-1" >What is your current AUSTRALIAN Visa or Citizenship?<small class="text-danger">*</small></label>
+	                            		<select name="visa" required="" class="form-control">
+	                            			<option value="0">Select Visa</option>
+	                            			<option value="1">Citizen</option>
+	                            			<option value="2">Permanent Resident</option>
+	                            			<option value="3">Temporary resident</option>
+	                            			<option value="4">Dependent visa</option>
+	                            			<option value="5">Holiday visa</option>
+	                            			<option value="6">Student visa A</option>
+	                            			<option value="7">Student visa B</option>
+	                            			<option value="8">Student visa C</option>
+	                            			<option value="9">Student visa D</option>
+	                            		</select>
+	                            	</div>
+
+_________________________________________________________________________________________________________
+
+<div class="row">
+	                            	<div class="col-md-12 mb-3">
+	                            		<strong>CHOOSE BETWEEN THE FOLLOWING OPTION BELOW:</strong>
+
+	                            	</div>
+	                            	<div class="col-md-12">
+	                            		<label class="control-label mb-2">
+	                            			<input type="radio" name="purpose" value="1" @if($user->info->purpose==1) checked @endif>
+	                            			I do currently hold an AUSTRALIAN Visa or Citizenship AND
+											I'm looking for a WORK in AUSTRALIA
+	                            		</label>
+	                            		<label class="control-label mb-2">
+	                            			<input type="radio" name="purpose" value="2" @if($user->info->purpose==2) checked @endif>
+	                            			"I do currently hold an AUSTRALIAN Visa or Citizenship AND
+											I'm looking for an UNIVERSITY to STUDY in AUSTRALIA"			
+	                            		</label>
+	                            		<label class="control-label mb-2">
+	                            			<input type="radio" name="purpose" value="3" @if($user->info->purpose==3) checked @endif>
+	                            			"I do currently hold an AUSTRALIAN Visa or Citizenship AND
+											I'm looking for an INTERNSHIP OR TRAINING in AUSTRALIA"					
+	                            		</label>
+	                            		<label class="control-label mb-2">
+	                            			<input type="radio" name="purpose" value="4" @if($user->info->purpose==4) checked @endif>
+	                            			"Currently I do NOT hold an AUSTRALIAN Visa or Citizenship, BUT
+											I'm looking for an AUSTRALIAN VISA and would like to STUDY or WORK in AUSTRALIA"			
+	                            		</label>
+	                            		<label class="control-label mb-2">
+	                            			<input type="radio" name="purpose" value="5" @if($user->info->purpose==5) checked @endif>
+	                            			"I do currently hold an AUSTRALIAN Visa or Citizenship AND
+											I'm looking for DISABILITY EMPLOYMENT SERVICES in AUSTRALIA"						
+	                            		</label>
+	                            	</div>
+
+	                            </div>
