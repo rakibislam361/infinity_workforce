@@ -43,12 +43,12 @@
                                         value="{{ @$data_name }}">
                                 </div>
                                 <!--<div class="form-group col-md-1">
-                                                <select name="assigned" class="form-control">
-                                                    <option value="">All</option>
-                                                    <option value="1">Assigned</option>
-                                                    <option value="2">Not Assigned</option>
-                                                </select>
-                                            </div>-->
+                                                                                                    <select name="assigned" class="form-control">
+                                                                                                        <option value="">All</option>
+                                                                                                        <option value="1">Assigned</option>
+                                                                                                        <option value="2">Not Assigned</option>
+                                                                                                    </select>
+                                                                                                </div>-->
                                 <div class="form-group col-md-2">
                                     <input type="text" name="email" class="form-control" placeholder="Email"
                                         value="{{ @$data_email }}">
@@ -67,29 +67,14 @@
                                 <div class="col-md-2">
                                     <select name="visa" required="" class="form-control visa-type">
                                         <option value="0">Select Visa Type</option>
-                                        <optgroup label="New option">
-                                            <option value="1">Citizen</option>
-                                            <option value="6">Student Visa</option>
-                                            <option value="10">PR visa</option>
-                                            <option value="11">Work Holiday Visa</option>
-                                            <option value="12">Protection visa</option>
-                                            <option value="13">TR (Post Study Work)</option>
-                                            <option value="14">Temporary Resident Visa</option>
-                                            <option value="16">Work Visa</option>
-                                        </optgroup>
-
-                                        <optgroup label="Old option">
-                                            <option value="0">Select Visa Type</option>
-                                            <option value="1">Citizen</option>
-                                            <option value="2">Permanent Resident</option>
-                                            <option value="3">Temporary resident</option>
-                                            <option value="4">Dependent visa</option>
-                                            <option value="5">Holiday visa</option>
-                                            <option value="6">Student visa A</option>
-                                            <option value="7">Student visa B</option>
-                                            <option value="8">Student visa C</option>
-                                            <option value="9">Student visa D</option>
-                                        </optgroup>
+                                        <option value="1">Citizen</option>
+                                        <option value="6">Student Visa</option>
+                                        <option value="10">PR visa</option>
+                                        <option value="11">Work Holiday Visa</option>
+                                        <option value="12">Protection visa</option>
+                                        <option value="13">TR (Post Study Work)</option>
+                                        <option value="14">Temporary Resident Visa</option>
+                                        <option value="16">Work Visa</option>
                                     </select>
                                     <span class="text-danger"> {{ $errors->first('visa') }}</span>
                                 </div>
@@ -119,7 +104,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="breadcrumbs">
                 <div class="breadcrumbs-inner">
@@ -167,7 +152,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -189,6 +174,7 @@
                                     <th scope="col" colspan="3">Applicant Name</th>
                                     <th scope="col" rowspan="2">Gender</th>
                                     <th scope="col" rowspan="2">Phone number</th>
+                                    <th scope="col" rowspan="5">Date of birth</th>
                                     <th scope="col" rowspan="2">Email Address</th>
                                     <th scope="col" colspan="2">VISA/Citizenship</th>
                                     <th scope="col" colspan="3">Address</th>
@@ -251,7 +237,9 @@
                                                 {{ @$user->info->phone }}
                                             </a>
                                         </td>
-
+                                        <td colspan="1">
+                                            {{ $user->info->dob ? date('m.d.y', strtotime($user->info->dob)) : 'N/A' }}
+                                        </td>
                                         <td>
                                             <a href="mailto:{{ $user->email }}" title="Send Mail" class="text-dark">
                                                 {{ $user->email }}

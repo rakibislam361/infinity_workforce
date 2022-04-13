@@ -179,6 +179,7 @@ class UserController extends Controller
             'first_name' => 'required',
             'email' => 'required|unique:users,email',
             'role' => 'required',
+            'dob' => 'required|date',
             'password' => 'required',
             'image' => 'mimes:jpeg,png,bmp |max:1024',
         ]);
@@ -230,6 +231,7 @@ class UserController extends Controller
         $user_info->mid_name = $request->middle_name;
         $user_info->last_name = $request->last_name;
         $user_info->phone = $request->phone;
+        $user_info->dob = $request->dob;
         $user_info->address = $request->address;
         $user_info->save();
         return redirect()->back()->with('success', 'Successfully Created User!');

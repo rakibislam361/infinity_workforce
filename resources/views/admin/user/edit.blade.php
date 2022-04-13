@@ -82,6 +82,13 @@
                                                 :&nbsp; {{ @$user->email }}
                                             </dd>
                                         </dl>
+                                        <dl class="row mb-0">
+                                            <dt class="col-sm-4 text-truncate">Date of birth</dt>
+                                            <dd class="col-sm-8">
+                                                :&nbsp;
+                                                {{ $user->info->dob ? date('F m Y', strtotime($user->info->dob)) : 'N/A' }}
+                                            </dd>
+                                        </dl>
                                         <dl class="row mb-2">
                                             <dt class="col-sm-4 text-truncate">Address</dt>
                                             <dd class="col-sm-8">
