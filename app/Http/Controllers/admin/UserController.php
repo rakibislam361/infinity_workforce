@@ -361,6 +361,7 @@ class UserController extends Controller
                 $user_info->gender = 0;
             }
 
+            $user_info->dob = $request->dob;
             $user_info->address = $request->current_address;
             $user_info->town_city = $request->town_city;
             $user_info->postcode = $request->postcode;
@@ -429,6 +430,7 @@ class UserController extends Controller
             }
 
 
+            $user_info->dob = $request->dob;
             $user_info->phone = $request->phone;
             $user_info->purpose = $request->purpose;
             //new
