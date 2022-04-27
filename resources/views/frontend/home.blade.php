@@ -40,6 +40,7 @@
             </ul>
         </div>
     </div> --}}
+
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -56,14 +57,14 @@
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" style="background-color: #7777772b;
-                            border-radius: 18px; height: 66px; width: 70px; position: absolute;
-                                         top: 50%;" role="button" data-slide="prev">
+            border-radius: 18px; height: 66px; width: 70px; position: absolute;
+                         top: 50%;" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next align-items-center" href="#carouselExampleControls" style="background-color: #7777772b;
-                            border-radius: 18px; height: 66px; width: 70px; position: absolute;
-                                        top: 50%;" role="button" data-slide="next">
+            border-radius: 18px; height: 66px; width: 70px; position: absolute;
+                        top: 50%;" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
@@ -126,58 +127,58 @@
                                     <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark mb-0">
                                         <div class="testimonial-author">
                                             <img src="{{asset('frontend')}}/img/clients/client-1.jpg" class="img-fluid
-                                                rounded-circle" alt="">
-                                                </div>
-                                                <blockquote>
-                                                    <p class="text-color-dark text-5 line-height-5">Your time is limited, so don’t waste it living someone else’s life.
-                                                        Don’t be trapped by dogma - which is living with the results of other people’s thinking. Don’t let the noise of
-                                                        others’ opinions drown out your own inner voice.</p>
-                                                </blockquote>
-                                                <div class="testimonial-author">
-                                                    <p><strong class="opacity-9 font-weight-extra-bold text-2">-Steve Jobs. Apple</strong></p>
-                                                </div>
-                                                </div>
-                                                </div>
-                                                </div>
-                                                <div>
-                                                    <div class="col">
-                                                        <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark mb-0">
-                                                            <div class="testimonial-author">
-                                                                <img src="{{asset('frontend')}}/img/clients/client-1.jpg" class="img-fluid rounded-circle" alt="">
-                                                            </div>
-                                                            <blockquote>
-                                                                <p class="text-color-dark text-5 line-height-5">Your time is limited, so don’t waste it living someone
-                                                                    else’s life. Don’t be trapped by dogma - which is living with the results of other people’s
-                                                                    thinking. Don’t let the noise of others’ opinions drown out your own inner voice.</p>
-                                                            </blockquote>
-                                                            <div class="testimonial-author">
-                                                                <p><strong class="opacity-9 font-weight-extra-bold text-2">-John Smith. Okler</strong></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="col">
-                                                        <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark mb-0">
-                                                            <div class="testimonial-author">
-                                                                <img src="{{asset('frontend')}}/img/clients/client-1.jpg" class="img-fluid rounded-circle" alt="">
-                                                            </div>
-                                                            <blockquote>
-                                                                <p class="text-color-dark text-5 line-height-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                                                    Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit.</p>
-                                                            </blockquote>
-                                                            <div class="testimonial-author">
-                                                                <p><strong class="opacity-9 font-weight-extra-bold text-2">-John Smith. Okler</strong></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                </div>
-                                                </div>
-                                                </div>
-                                                </section> --}}
+rounded-circle" alt="">
+</div>
+<blockquote>
+    <p class="text-color-dark text-5 line-height-5">Your time is limited, so don’t waste it living someone else’s life.
+        Don’t be trapped by dogma - which is living with the results of other people’s thinking. Don’t let the noise of
+        others’ opinions drown out your own inner voice.</p>
+</blockquote>
+<div class="testimonial-author">
+    <p><strong class="opacity-9 font-weight-extra-bold text-2">-Steve Jobs. Apple</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div>
+    <div class="col">
+        <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark mb-0">
+            <div class="testimonial-author">
+                <img src="{{asset('frontend')}}/img/clients/client-1.jpg" class="img-fluid rounded-circle" alt="">
+            </div>
+            <blockquote>
+                <p class="text-color-dark text-5 line-height-5">Your time is limited, so don’t waste it living someone
+                    else’s life. Don’t be trapped by dogma - which is living with the results of other people’s
+                    thinking. Don’t let the noise of others’ opinions drown out your own inner voice.</p>
+            </blockquote>
+            <div class="testimonial-author">
+                <p><strong class="opacity-9 font-weight-extra-bold text-2">-John Smith. Okler</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="col">
+        <div class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-quotes-dark mb-0">
+            <div class="testimonial-author">
+                <img src="{{asset('frontend')}}/img/clients/client-1.jpg" class="img-fluid rounded-circle" alt="">
+            </div>
+            <blockquote>
+                <p class="text-color-dark text-5 line-height-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor
+                    sit amet, consectetur adipiscing elit.</p>
+            </blockquote>
+            <div class="testimonial-author">
+                <p><strong class="opacity-9 font-weight-extra-bold text-2">-John Smith. Okler</strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section> --}}
 @endsection
 
 @push('footer')

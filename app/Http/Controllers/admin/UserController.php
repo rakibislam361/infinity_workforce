@@ -297,7 +297,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = User::where('id', $id)->with('info')->first();
         $roles = Role::where('status', 1)->get();
         $countries = Country::where('status', 1)->get();
         $categories = WorkingCategory::where('status', 1)->get();
@@ -307,8 +307,6 @@ class UserController extends Controller
         $companies = EmployerInfo::where('status', 1)->orderBy('company_name')->get();
         return view('admin.user.edit', compact('user', 'roles', 'countries', 'categories', 'u_work', 'companies'));
         // candidate wish to work
-
-
     }
 
     /**

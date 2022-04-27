@@ -17,17 +17,17 @@ class AssignedController extends Controller
      */
     public function index()
     {
-        $data_name = '';
-        $data_email = '';
-        $data_suburb = '';
-        $data_visa = '';
-        $data_id = '';
+        $data_name='';
+        $data_email='';
+        $data_suburb='';
+        $data_visa='';
+        $data_id='';
+      
+       
+        $candidates=User::where('role_id',2)->where('status',1)->orderBy('created_at','DESC')->paginate(50);
 
-
-        $candidates = User::where('role_id', 2)->where('status', 1)->orderBy('created_at', 'DESC')->paginate(50);
-
-        $employers = EmployerInfo::where('status', 1)->orderBy('company_name', 'ASC')->get();
-        return view('admin.employer.assigned_candidates', compact('candidates', 'employers', 'data_visa', 'data_name', 'data_email', 'data_suburb', 'data_id'));
+        $employers=EmployerInfo::where('status',1)->orderBy('company_name', 'ASC')->get();    
+        return view('admin.employer.assigned_candidates',compact('candidates','employers','data_visa','data_name','data_email','data_suburb','data_id'));
     }
 
     /**
@@ -37,43 +37,44 @@ class AssignedController extends Controller
      */
     public function candidate_search(Request $request)
     {
-        $data_id = request('can_id', '');
-        $$data_job = request('work_id', '');
-        $data_name = request('name', '');
-        $data_email = request('email', '');
-        $data_suburb = request('suburb', '');
-        $data_visa = request('visa', '');
-        $candidates = User::with(['info'])->where('role_id', 2)->where('status', 1);
+        $data_id = request('can_id','');
+        $data_name = request('name','');
+        $data_email = request('email','');
+        $data_suburb = request('suburb','');
+        $data_visa = request('visa','');
 
-        if ($data_id) {
-            $query = $candidates->where('id', $data_id);
+        $candidates=User::with(['info'])->where('role_id',2)->where('status',1);
+        
+        if($data_id){
+             $query = $candidates->where('id',$data_id);
         }
-
+   
         if (!empty($data_name)) {
             $candidates = $candidates->whereHas('info', function ($query) use ($data_name) {
                 $query = $query->where('first_name', 'LIKE', '%' . $data_name . '%');
             });
         }
 
-        if ($data_email) {
-            $candidates = $candidates->where('email', 'LIKE', '%' . $data_email . '%');
+        if($data_email){
+           $candidates= $candidates->where('email','LIKE','%'.$data_email.'%');
         }
 
-        if ($data_suburb) {
+        if($data_suburb){
             $candidates = $candidates->whereHas('info', function ($query) use ($data_suburb) {
-                $query = $query->where('postcode', $data_suburb);
+                $query = $query->where('postcode',$data_suburb);
             });
         }
 
-        if ($data_visa > 0) {
+        if($data_visa>0){
             $candidates = $candidates->whereHas('info', function ($query) use ($data_visa) {
-                $query = $query->where('visa', $data_visa);
+                $query = $query->where('visa',$data_visa);
             });
         }
 
         $candidates = $candidates->orderBy('id', 'desc')->paginate(50);
-        $employers = EmployerInfo::orderBy('company_name', 'ASC')->paginate(50);
-        return view('admin.employer.assigned_candidates', compact('candidates', 'employers', 'data_name', 'data_visa', 'data_email', 'data_suburb', 'data_id'));
+      
+        $employers=EmployerInfo::orderBy('company_name', 'ASC')->paginate(50);    
+        return view('admin.employer.assigned_candidates',compact('candidates','employers','data_name','data_visa','data_email','data_suburb','data_id'));
     }
 
     /**
@@ -83,31 +84,41 @@ class AssignedController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function employee_assign(Request $request)
-    {
-        // $data = AssignedCandidate::where('employer_id',$request->employer)->where('user_id'); 
-        if (!empty($request->assigned)) {
-
-            foreach ($request->assigned as $value) {
-
-                $data = new AssignedCandidate;
-                $data->employer_id = $request->employer;
-                $data->user_id = $value;
-                $data->status = 1;
-                $assigned_user = AssignedCandidate::where('employer_id', $request->employer)->where('user_id', $value)->first();
-                if ($assigned_user) {
-                } else {
-
-                    $data->save();
-                }
-            }
-            return redirect()->back()->with('success', 'Successfully Assigned Candidate!');
-        } else {
-            return redirect()->back()->with('error', 'Please select at least one candidate');
-        }
+    public function employee_assign(Request $request){
+       // $data = AssignedCandidate::where('employer_id',$request->employer)->where('user_id'); 
+       if(!empty($request->assigned)){
+           
+        foreach ($request->assigned as $value) {
+       
+           $data = new AssignedCandidate;
+           $data->employer_id= $request->employer;
+           $data->user_id= $value;
+           $data->status =1;
+           $assigned_user = AssignedCandidate::where('employer_id',$request->employer)->where('user_id',$value)->first();
+           if($assigned_user){
+               
+           }
+           else{
+               
+            $data->save();
+            
+           }
+          
+       }
+       return redirect()->back()->with('success','Successfully Assigned Candidate!');
+       
+       
+        
+       }
+       else{
+         return redirect()->back()->with('error','Please select at least one candidate');
+       }
+       
+       
     }
     public function store(Request $request)
     {
+       
     }
 
     /**
@@ -152,17 +163,17 @@ class AssignedController extends Controller
      */
     public function destroy($id)
     {
-        $user = AssignedCandidate::find($id);
+        $user= AssignedCandidate::find($id);
         $user->delete();
-
-        return redirect()->back()->with('success', 'Successfully Deleted User!');
+        
+        return redirect()->back()->with('success','Successfully Deleted User!');
     }
     public function user_destroy($id)
     {
-        $user = User::find($id);
-
+        $user= User::find($id);
+       
         $user->delete();
-
-        return redirect()->back()->with('success', 'Successfully deleted user!');
+        
+        return redirect()->back()->with('success','Successfully deleted user!');
     }
 }

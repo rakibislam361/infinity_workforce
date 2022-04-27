@@ -43,12 +43,12 @@
                                         value="{{ @$data_name }}">
                                 </div>
                                 <!--<div class="form-group col-md-1">
-                                                                                                    <select name="assigned" class="form-control">
-                                                                                                        <option value="">All</option>
-                                                                                                        <option value="1">Assigned</option>
-                                                                                                        <option value="2">Not Assigned</option>
-                                                                                                    </select>
-                                                                                                </div>-->
+                                                                                                            <select name="assigned" class="form-control">
+                                                                                                                <option value="">All</option>
+                                                                                                                <option value="1">Assigned</option>
+                                                                                                                <option value="2">Not Assigned</option>
+                                                                                                            </select>
+                                                                                                        </div>-->
                                 <div class="form-group col-md-2">
                                     <input type="text" name="email" class="form-control" placeholder="Email"
                                         value="{{ @$data_email }}">
@@ -238,7 +238,7 @@
                                             </a>
                                         </td>
                                         <td colspan="1">
-                                            {{ $user->info->dob ? date('m.d.y', strtotime($user->info->dob)) : 'N/A' }}
+                                            {{ $user->info ? date('m.d.y', strtotime($user->info->dob)) : 'N/A' }}
                                         </td>
                                         <td>
                                             <a href="mailto:{{ $user->email }}" title="Send Mail" class="text-dark">

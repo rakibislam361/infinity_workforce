@@ -67,7 +67,7 @@
         <div class="form-group col-md-4">
             <label for="dob" class="control-label mb-1">Date of birth <small class="text-danger">*</small></label>
             <input id="dob" name="dob" type="date" class="form-control" placeholder="dob"
-                value="{{ $user->info->dob ? date('m/d/y', strtotime(@$user->info->dob)) : '' }}" required="">
+                value="{{ $user->info->dob ? date('Y-m-d', strtotime(@$user->info->dob)) : '' }}" required="">
             <span class="text-danger"> {{ $errors->first('dob') }}</span>
         </div>
         <div class="form-group col-md-8">
@@ -193,10 +193,10 @@
                 <option value="" @if (@$user->info->visa == 0 || old('visa') == 0) selected @endif>Select Visa</option>
                 <option value="1" @if (@$user->info->visa == 1 || old('visa') == 1) selected @endif>Citizen</option>
                 <option value="6" @if (@$user->info->visa == 6 || old('visa') == 6) selected @endif>Student Visa</option>
-                <option value="9" @if (@$user->info->visa == 10 || old('visa') == 10) selected @endif>PR visa</option>
-                <option value="2" @if (@$user->info->visa == 11 || old('visa') == 11) selected @endif>Work Holiday Visa</option>
-                <option value="3" @if (@$user->info->visa == 12 || old('visa') == 12) selected @endif>Protection visa</option>
-                <option value="4" @if (@$user->info->visa == 13 || old('visa') == 13) selected @endif>TR (Post Study Work)</option>
+                <option value="10" @if (@$user->info->visa == 10 || old('visa') == 10) selected @endif>PR visa</option>
+                <option value="11" @if (@$user->info->visa == 11 || old('visa') == 11) selected @endif>Work Holiday Visa</option>
+                <option value="12" @if (@$user->info->visa == 12 || old('visa') == 12) selected @endif>Protection visa</option>
+                <option value="13" @if (@$user->info->visa == 13 || old('visa') == 13) selected @endif>TR (Post Study Work)</option>
                 <option value="5" @if (@$user->info->visa == 14 || old('visa') == 5) selected @endif>Temporary Resident Visa</option>
                 <option value="7" @if (@$user->info->visa == 16 || old('visa') == 7) selected @endif>Work Visa</option>
             </select>

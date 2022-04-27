@@ -125,6 +125,9 @@ class FrontEndController extends Controller
         //mail
         $objDemo = new \stdClass();
 
+
+
+
         $admin = User::where('role_id', 1)->where('status', 1)->get();
         $admin = json_decode($admin);
         Mail::to('info@infinityworkforce.com.au')->send(new ContactMail($mail));
@@ -145,7 +148,7 @@ class FrontEndController extends Controller
         }
     }
 
-    public function apply_job(Request $request, $id)
+       public function apply_job(Request $request, $id)
     {
         $request->validate([
             'name' => 'required|string',

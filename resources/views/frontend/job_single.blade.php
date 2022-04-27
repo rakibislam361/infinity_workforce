@@ -39,7 +39,7 @@
 
                 <div class="col-md-12 mt-4">
                     <a id="applye-form" class="btn btn-sm btn-primary" href="{{ url('/apply-job') }}/{{ @$job->id }}"
-                        data="{{ @$job->id }}">Applye
+                        data="{{ @$job->id }}">Apply
                         Now</a>
                 </div>
 

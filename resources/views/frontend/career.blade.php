@@ -78,7 +78,10 @@
                                     </div>
                                 </div>
                             </div>
+
+
                         </article>
+
                     </div>
                 @endforeach
                 <div class="col-md-12 text-right">

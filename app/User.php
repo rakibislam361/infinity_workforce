@@ -48,17 +48,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\UserInfo', 'id', 'user_id');
     }
-
     public function interview()
     {
-        return $this->belongsTo(interview::class, 'id', 'user_id');
+        return $this->belongsTo('App\Interview', 'id', 'user_id');
     }
-
     public function work_history()
     {
         return $this->hasMany('App\WorkHistory');
     }
-
     public function documents()
     {
         return $this->hasMany('App\UserDocument');
@@ -71,6 +68,7 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\UserDocument')->where('type', 1);
     }
+
     public function doc_visas()
     {
         return $this->hasMany('App\UserDocument')->where('type', 2);
@@ -127,12 +125,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\UserDocument', 'id', 'user_id');
     }
-
     public function wish_to_works()
     {
         return $this->belongsToMany('App\Work');
     }
-
     public function user_to_works()
     {
         return $this->hasMany('App\UserWork');
